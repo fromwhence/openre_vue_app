@@ -1,29 +1,37 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import Home from '../views/Home.vue'
+import OpenHouseIndex from '../views/Index.vue'
 
 Vue.use(VueRouter)
 
 const routes = [
-  {
-    path: '/',
-    name: 'home',
-    component: Home
-  },
-  {
-    path: '/about',
-    name: 'about',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
-  }
+ {path: '/', name: 'home', component: OpenHouseIndex },
 ]
-
 const router = new VueRouter({
-  mode: 'history',
-  base: process.env.BASE_URL,
-  routes
+ mode: 'history',
+ base: process.env.BASE_URL,
+ routes
 })
 
 export default router
+
+// import Vue from 'vue'
+// import VueRouter from 'vue-router'
+// import FoodsIndex from '../views/FoodsIndex.vue'
+// import FoodsNew from '../views/FoodsNew.vue'
+// import FoodsShow from '../views/FoodsShow.vue'
+// import FoodsEdit from '../views/FoodsEdit.vue'
+// Vue.use(VueRouter)
+// const routes = [
+//  {path: '/', name: 'home', component: FoodsIndex },
+//  {path: '/foods', name: 'foods-index', component: FoodsIndex },
+//  {path: '/foods/new', name: 'foods-new', component: FoodsNew },
+//  {path: '/foods/:id', name: 'foods-show', component: FoodsShow },
+//  {path: '/foods/:id/edit', name: 'foods-edit', component: FoodsEdit }
+// ]
+// const router = new VueRouter({
+//  mode: 'history',
+//  base: process.env.BASE_URL,
+//  routes
+// })
+// export default router
