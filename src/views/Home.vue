@@ -4,8 +4,8 @@
     <h1>Open House Search</h1>
 
     <form v-on:submit.prevent="search()">
-      Zip Code: <input type="number" v-model="searchTerm" placeholder="Search by Name">
-<!--       Date: <input type="date" value="Search" v-model="searchTerm" placeholder="Search by Name"> -->
+      <div>Zip Code: <input type="text" v-model="searchTerm" placeholder=""></div>
+<!--       <div>Date: <input type="date" value="Search" v-model="searchTerm" placeholder="Search by Name"></div> -->
       <input type="submit" value="Submit">
     </form>
   </div>
@@ -35,15 +35,13 @@ export default {
   methods: {
      search: function() {
        axios
-         .get("/api/foods?search=" + this.searchTerm)
+         .get("http://localhost:3000/api/open_houses?search=" + this.searchTerm)
          .then(response => {
            this.foods = response.data;
          });
      }
    }
   };
-  </script>
-};
 </script>
 
 

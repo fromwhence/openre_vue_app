@@ -1,11 +1,13 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import OpenHouseIndex from '../views/Index.vue'
+import Home from '../views/Home.vue'
+import OpenHouseIndex from '../views/OpenHouseIndex.vue'
 
 Vue.use(VueRouter)
 
 const routes = [
- {path: '/', name: 'home', component: OpenHouseIndex },
+ {path: '/', name: 'home', component: Home },
+ {path: '/openhouses', name: 'openhouses-index', component: OpenHouseIndex }
 ]
 const router = new VueRouter({
  mode: 'history',
