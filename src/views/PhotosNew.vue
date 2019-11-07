@@ -1,0 +1,1 @@
+PhotoNew.vue
