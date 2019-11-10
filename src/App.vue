@@ -4,7 +4,6 @@
 <!-- Top Nav Bar -->
     <nav class="navbar navbar-expand-lg navbar-dark" id="menu">
       <div class="container">
-      <a class="navbar-brand" href="index.html"><span class="icon-uilove icon-uilove-realestate"></span></a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#menu-content" aria-controls="menu-content" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -12,13 +11,9 @@
       <div class="collapse navbar-collapse" id="menu-content">
         <ul class="navbar-nav mr-auto">
         <router-link to="/"><li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <a class="nav-link" href="/" role="button" aria-haspopup="true" aria-expanded="false">
               Home <span class="sr-only">(current)</span>
             </a>
-            <div class="dropdown-menu">
-                <a href="index.html" class="dropdown-item">Homepage 1</a>
-                <a href="index2.html" class="dropdown-item">Homepage 2</a>
-            </div>
           </li>
         </router-link>
         <router-link to="/open_houses"><li class="nav-item dropdown">
@@ -125,20 +120,16 @@
           </li>          
         </ul>       
         <ul class="navbar-nav ml-auto">        
-          <li class="nav-item dropdown user-account">
-            <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              <span class="user-image" style="background-image:url(' img/demo/profile3.jpg');"></span> Hi, John
+          <router-link to="/login"><li class="nav-item dropdown user-account">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Sign In
             </a>
             <div class="dropdown-menu">
-                <a href="my_profile.html" class="dropdown-item">My Profile</a>
-                <a href="my_password.html" class="dropdown-item">Change Password</a>
-                <a href="my_notifications.html" class="dropdown-item">Notifications</a>
-                <a href="my_membership.html" class="dropdown-item">Membership</a>
-                <a href="my_payments.html" class="dropdown-item">Payments</a>
+                <router-link to="/"><a class="logout dropdown-item">Sign Out</a></router-link>
+                <a href="my_password.html" class="dropdown-item">My profile</a>
                 <a href="my_account.html" class="dropdown-item">Account</a>
             </div>
-          </li>
-          <li class="nav-item"><a class="nav-link nav-btn" href="my_listing_add.html"><span><i class="fa fa-plus" aria-hidden="true"></i> Add listing</span></a></li>
+          </li></router-link>
+          <router-link to="/signup"><li class="nav-item"><a class="nav-link nav-btn" href="my_listing_add.html"><span><i class="fa fa-plus" aria-hidden="true"></i> Sign Up</span></a></li></router-link>
         </ul>
         
       </div>
@@ -155,16 +146,7 @@
 <footer id="footer">
   <div class="container container-1000">
   <div class="row">
-  <div class="col-lg-3">
-    <p><span class="icon-uilove icon-uilove-realestate"></span></p>
-    <address class="mb-3">
-            <strong>OpenRE, Inc.</strong><br>
-            1222 W. Madison St.<br>
-            Chicago, IL 60607<br>
-            <abbr title="Phone">P:</abbr> (773) 220-3278
-            </address>
-    <div class="footer-social mb-4"><a href="#" class="ml-2 mr-2"><span class="fa fa-twitter"></span></a> <a href="#" class="ml-2 mr-2"><span class="fa fa-facebook"></span></a> <a href="#" class="ml-2 mr-2"><span class="fa fa-instagram"></span></a></div>
-  </div>
+  
 <div class="col-lg-3 col-sm-4">
 <div class="footer-links">
   <ul class="list-unstyled">
@@ -193,6 +175,15 @@
   </ul>
 </div>
 </div>
+<div class="col-lg-3">
+  <address class="mb-3">
+          <strong>OpenRE, Inc.</strong><br>
+          1222 W. Madison St.<br>
+          Chicago, IL 60607<br>
+          <abbr title="Phone">P:</abbr> (773) 220-3278
+          </address>
+  <div class="footer-social mb-4"><a href="#" class="ml-2 mr-2"><span class="fa fa-twitter"></span></a> <a href="#" class="ml-2 mr-2"><span class="fa fa-facebook"></span></a> <a href="#" class="ml-2 mr-2"><span class="fa fa-instagram"></span></a></div>
+</div>
 
 </div>
 <div class="footer-credits d-lg-flex justify-content-lg-between align-items-center">
@@ -207,26 +198,7 @@
 </template>
 
 <style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
 
-#nav {
-  padding: 30px;
-}
-
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
-
-#nav a.router-link-exact-active {
-  color: #42b983;
-}
 </style>
 
 <script>

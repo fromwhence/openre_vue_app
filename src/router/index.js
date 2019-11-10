@@ -17,18 +17,18 @@ import InterestsEdit from '../views/InterestsEdit.vue'
 import PhotosNew from '../views/PhotosNew.vue'
 import PhotosShow from '../views/PhotosShow.vue'
 import PhotosEdit from '../views/PhotosEdit.vue'
-import Signup from "../views/Signup.vue";
-import Login from "../views/Login.vue";
-import Logout from "../views/Logout.vue";
+import Signup from "../views/Signup.vue"
+import Login from "../views/Login.vue"
+import Logout from "../views/Logout.vue"
 
 
 Vue.use(VueRouter)
 
-const routes = [
+var routes = [
  {path: '/', name: 'home', component: Home },
  {path: '/open_houses', name: 'open-houses-index', component: OpenHousesIndex },
- {path: '/open_houses/new', name: 'openhouses-new', component: OpenHousesNew },
- {path: '/open_houses/:id', name: 'openhouses-show', component: OpenHousesShow },
+ {path: '/open_houses/new', name: 'open-houses-new', component: OpenHousesNew },
+ {path: '/open_houses/:id', name: 'open-houses-show', component: OpenHousesShow },
  {path: '/open_houses/id/edit', name: 'openhouses-edit', component: OpenHousesEdit },
  {path: '/realtors/new', name: 'realtors-new', component: RealtorsNew },
  {path: '/realtors/:id', name: 'realtors-show', component: RealtorsShow },
@@ -55,25 +55,36 @@ const router = new VueRouter({
  routes
 })
 
+// commented out while testing sending search data via routes
+
 export default router
 
-// import Vue from 'vue'
-// import VueRouter from 'vue-router'
-// import FoodsIndex from '../views/FoodsIndex.vue'
-// import FoodsNew from '../views/FoodsNew.vue'
-// import FoodsShow from '../views/FoodsShow.vue'
-// import FoodsEdit from '../views/FoodsEdit.vue'
-// Vue.use(VueRouter)
-// const routes = [
-//  {path: '/', name: 'home', component: FoodsIndex },
-//  {path: '/foods', name: 'foods-index', component: FoodsIndex },
-//  {path: '/foods/new', name: 'foods-new', component: FoodsNew },
-//  {path: '/foods/:id', name: 'foods-show', component: FoodsShow },
-//  {path: '/foods/:id/edit', name: 'foods-edit', component: FoodsEdit }
-// ]
-// const router = new VueRouter({
-//  mode: 'history',
-//  base: process.env.BASE_URL,
-//  routes
+// export default new router ({
+// 	routes: [
+// 		{
+// 			path: "/",
+// 			redirect: {
+// 				name: 'open-houses-index'
+// 				}
+// 		},
+// 		{
+// 			path: "/open_houses",
+// 			name: "open-houses-index",
+// 			component: OpenHousesIndex
+// 		}
+// 	]
 // })
-// export default router
+
+
+
+
+
+
+
+
+
+
+
+
+
+

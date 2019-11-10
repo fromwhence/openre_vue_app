@@ -1,13 +1,13 @@
 <template>
   <div class="open-houses-show">
   	<h3>{{ open_house.property.address }}</h3>
-  	<h3>{{ open_house.start_time }} {{ open_house.end_time }}</h3>
+  	<h3>{{ open_house.friendly_start_time }}{{ open_house.friendly_end_time }}</h3>
     <h3>{{ open_house.property.formatted.home_category }}</h3>
-  	<h4>{{ open_house.property.price }}</h4>
+  	<h4>{{ open_house.property.friendly_price }}</h4>
   	<h3>Beds: {{ open_house.property.bedrooms }}</h3>
   	<h3>Baths: {{ open_house.property.baths }} </h3>
     <h3>{{ open_house.property.square_footage }}</h3>
-    <h3>{{ open_house.property.photo_url }}</h3>
+    <h3>{{ open_house.realtor.photo_url }}</h3>
   	<h3>Listing Agent: {{ open_house.realtor.first_name }} {{open_house.realtor.last_name}}</h3>
     <h3>Brokered by: {{ open_house.realtor.brokerage }}</h3>
     <h3>{{ open_house.realtor.email }}</h3>
@@ -29,8 +29,8 @@ export default {
     return {
       // open_house: []
       open_house: {
-        start_time: "",
-        end_time: "",
+        friendly_start_time: "",
+        friendly_end_time: "",
         property: {
           address: "",
           mls_number: "",

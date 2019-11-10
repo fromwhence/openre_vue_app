@@ -21,6 +21,7 @@ Listo v1.0.0
 */
 /*	1.	Typography
 -------------------------------------------------------------------*/
+
 html {
 	font-size: 100%;
 	-ms-text-size-adjust: 100%;
@@ -76,6 +77,10 @@ h3 small, h4 small, h5 small {
 h1.block, h2.block, h3.block, h4.block, h5.block, h6.block {
 	padding-bottom: 10px;
 }
+
+/* ADDED BY ME - HTML DATE INPUT
+
+
 /* Lins and Others
 ------------------------------------
 */
@@ -191,6 +196,7 @@ ul.checked_list.feature-list, ol.checked_list.feature-list {
 }
 }
 address {
+	padding-top: 17px;
 	margin-bottom: 0px;
 }
 address a {
@@ -281,6 +287,7 @@ hr.dotted {
 	box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.05);
 	background-image: none;
 	background-color: #563d7c;
+/*	background-color: #747c91;*/
 	margin-bottom: 15px;
 	transition: background-color 0.3s ease;
 	margin-left: auto;
@@ -305,9 +312,9 @@ hr.dotted {
 #menu .nav-item .nav-link {
 	font-weight: bold;
 	color: #FFF;
-	font-size: 16px;
-	padding-left: 15px;
-	padding-right: 15px;
+	font-size: 17px;
+	padding-left: 20px;
+	padding-right: 20px;
 	padding-top: 0;
 	padding-bottom: 0;
 	margin-top: 15px;
@@ -557,6 +564,9 @@ hr.dotted {
 .tab-content {
 	margin-bottom: 30px;
 }
+
+}
+
 /* List Group */
 .list-group.no-border .list-group-item {
 	border: none;
@@ -789,6 +799,7 @@ hr.dotted {
 	font-size: 76px;
 	color: #ffce40;
 	margin-bottom: 30px;
+	margin-left: 20px;
 }
 .feature-box .content-box h4 {
 	font-size: 22px;
@@ -1171,6 +1182,33 @@ h4.title {
 	background-color: rgba(255, 255, 255, 0.1);
 	border-color: transparent;
 }
+.search-left-input-padding {
+	padding-left: 14px;
+	padding-right: 5px;
+}
+.search-input-padding {
+	padding: 0px 5px;
+}
+.search-button {
+	padding: 0px 5px;
+	margin-top: 1px;
+	margin-right: 1px;
+}
+.search-button button {
+	padding-left: 30px;
+	padding-right: 30px;
+}
+
+.reset-button {
+	padding: 0px 5px;
+	margin-top: 1px;
+}
+.reset-button button {
+	padding-left: 30px;
+	padding-right: 30px;
+}
+
+
 /*	7.	Form Elements
 -------------------------------------------------------------------*/
 .form-control {
@@ -1530,8 +1568,13 @@ input[type="radio"], input[type="checkbox"] {
 }
 .btn-primary, .btn-primary:focus, .btn-primary:hover, .btn-primary:active, .btn-primary:active:hover, .btn-primary:active:focus {
 	background-color: #ffce40;
-	border-color: #ffce40;
+	border-color: #563d7c;
 	color: #563d7c;
+}
+.btn-primary-reverse {
+	background-color: #563d7c;
+	border-color: #563d7c;
+	color: #ffce40;	
 }
 .btn-light {
 	background-color: #eff3f6;

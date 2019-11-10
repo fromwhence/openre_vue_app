@@ -29,6 +29,7 @@
                       <div class="col-sm-7">
                         <div class="form-group">
                           <select class="form-control form-control-lg ui-select" placeholder="Property Type">
+                            <option value=""> Property Type </option>
                             <option value="0">Single-Family</option>
                             <option value="1">Condo</option>
                             <option value="2">Townhome</option>
@@ -38,7 +39,7 @@
                       </div>
                       <div class="col-sm-5">
                         <div class="form-group">
-                          <router-link v-bind:to="'/open_houses/'"><button type="submit" v-on:click="searchTime()" class="btn btn-lg btn-primary btn-block">Search</button>
+                          <router-link v-bind:to="'/open_houses/'"><button type="submit" v-on:click="searchAll()"" class="btn btn-lg btn-primary btn-block">Search</button>
                           </router-link>
                         </div>
                       </div>
@@ -159,8 +160,7 @@ export default {
       open_house: [],
       searchTerm: "",
       searchPropertyType: "",
-      searchDate: "",
-      searchAll: "",
+      searchDate: ""
     };
   },
   created: function() {
@@ -170,30 +170,24 @@ export default {
         this.open_houses = response.data;
       });
   },
-  methods: {
-     searchZip: function() {
-       axios
-         .get("http://localhost:3000/api/open_houses?zip=" + this.searchTerm)
-         .then(response => {
-           this.open_houses = response.data;
-         });
-     },
-     searchHomeCategory: function() {
-       axios
-         .get("http://localhost:3000/api/open_houses?category=" + this.searchPropertyType)
-         .then(response => {
-           this.open_houses = response.data;
-         });
-     },
-     searchTime: function() {
+methods: {
+     searchAll: function() {
         axios
-        .get("http://localhost:3000/api/open_houses?date=" + this.searchDate)
+          .get("http://localhost:3000/api/open_houses?date=" + this.searchDate + "&category=" + this.searchPropertyType + "&zip=" + this.searchTerm)
+          .then(response => {
+          this.open_houses = response.data;
+          });
+     },
+     resetSearch: function() {
+      this.searchDate = "";
+      this.searchTime = "";
+      this.searchTerm = "";
+
+      axios
+        .get("http://localhost:3000/api/open_houses")
         .then(response => {
           this.open_houses = response.data;
-          console.log("There's Date Activity");
         });
-     },
-     filterAll: function() {
      }
    }
   };
