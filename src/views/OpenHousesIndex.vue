@@ -48,20 +48,112 @@
       </form>
     </div>
     <!-- end of open houses nav bar -->
+    <!-- breadcrumbs and page header -->
+    <div class="container">
+      <div class="row justify-content-md-center">
+        <div class="col col-lg-12 col-xl-10">
+          <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+              <li class="breadcrumb-item"><a href="/">Home</a></li>
+              <li class="breadcrumb-item"><a href="#">Open Houses</a></li>
+              <li class="breadcrumb-item active" aria-current="page">Results</li>
+            </ol>
+          </nav>
+        <div class="page-header header-underline">
+          <h1>Upcoming open houses matching your search</h1>
+        </div>
+      </div>
+     </div>
+    </div>
+    <!-- open houses list view -->
+  <div id="content" class="less-top-padding">
+    <div class="container">
+      <div class="row justify-content-md-center">
+        <div class="col col-lg-12 col-xl-10">
+         <div class="col-md-8 col-lg-9">
+          <div class="sorting">
+            <div class="row justify-content-between">
+              <div class="col-sm-5 col-md-5 col-lg-4 col-xl-3">
+                <div class="form-group">
+                  <div class="form-group">
+                    <select class="form-control form-control-lg ui-select price-sort" placeholder="Sort By">
+                      <option value=""> Sort By </option>
+                      <option value="0">Highest Price</option>
+                      <option value="1">Lowest Price</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+              <!-- <div class="col-sm-6 col-md-5 col-lg-4 col-xl-3">
+                <div class="btn-group float-right" role="group"> <a href="property_grid.html" class="btn btn-light"><i class="fa fa-th"></i></a> <a href="property_listing.html" class="btn btn-light active"><i class="fa fa-bars"></i></a> </div>
+              </div> -->
+             </div>                
+            </div>
+          <div class="clearfix"></div>
+            <div class="item-listing list">
+              <div v-for="open_house in open_houses">
+                <div class="item">
+                  <div class="row">
+                    <div class="col-lg-5">
+                      <router-link v-bind:to="'/open_houses/' + open_house.id">
+                        <div class="item-image"><img v-bind:src="open_house.property.default_image_url" class="img-fluid" alt="">
+                          <div class="item-badges">
+                          <div class="item-badge-left">${{ open_house.property.friendly_price }}
+                          </div>
+                          </div>
+                          <div class="item-meta">
+                          <div class="item-badge-right">{{ open_house.property.formatted.home_category }}
+                          </div>
+                          </div>
+                          </div>
+                        </router-link>
+                      </div>
 
-    <div v-for="open_house in open_houses">
-      <router-link v-bind:to="'/open_houses/' + open_house.id">
-        <h3>{{ open_house.property.address }}</h3>
-        <h3>{{ open_house.friendly_start_time }}{{ open_house.friendly_end_time }}</h3>
-        <h4>{{ open_house.property.friendly_price }}</h4>
-        <h3>Property Type: {{ open_house.property.formatted.home_category }}</h3>
-        <h3>Beds: {{ open_house.property.bedrooms }}</h3>
-        <h3>Baths: {{ open_house.property.baths }} </h3>
-        <h3>Realtor: {{ open_house.realtor.first_name }} {{open_house.realtor.last_name}}</h3>
-        <br>
-      </router-link>
+                  <div class="col-lg-7">
+                    <div class="item-info">
+                      <h3 class="item-title"><a href="property_single.html">{{ open_house.property.address }}</a></h3>
+                      <div class="item-location open-house-time">{{ open_house.friendly_start_time }}{{ open_house.friendly_end_time }} 
+                      </div>
+                      <div class="item-details-i"> <span class="bedrooms" data-toggle="tooltip" title="bedrooms">{{ open_house.property.bedrooms }} Beds 
+                        </span> <span class="bathrooms" data-toggle="tooltip" title="baths">{{ open_house.property.baths }} Baths</span> 
+                      </div>
+                        <div class="item-details">
+                          <ul>
+                            <li>{{ open_house.property.friendly_square_footage }} Sq. Ft.</li>
+                          </ul>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-md-6">
+                          <div class="listing-agent">Listing agent:
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <a href="#" class="listing-agent">{{ open_house.realtor.first_name }} {{open_house.realtor.last_name}}</a>
+                        </div>
+                      </div>
+                    </div>                                  
+                    <div class="row">
+                      <div class="col-md-6">
+                        <div class="brokerage">Presented by:
+                        </div>
+                        </div>
+                        <div class="col-md-6">
+                          <a href="#" class="brokerage">{{ open_house.realtor.brokerage }}</a>
+                        </div>
+                      </div>
+                    </div> 
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div> 
+          </div>
+        </div>
+      </div>
     </div>   
   </div> 
+</div>
 </template>
 
 <style>
@@ -74,6 +166,7 @@ export default {
   data: function() {
     return {
       open_houses: [],
+      property: [],
       searchTerm: "",
       searchPropertyType: "",
       searchDate: ""

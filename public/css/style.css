@@ -259,8 +259,11 @@ hr.dotted {
 	margin-right: auto;
 }
 #content {
-	padding-top: 30px;
+	padding-top: 15px;
 	padding-bottom: 30px;
+}
+.less-top-padding {
+	padding-top: 0px;
 }
 .boxed {
 	background: #e5e5e5;
@@ -312,7 +315,7 @@ hr.dotted {
 #menu .nav-item .nav-link {
 	font-weight: bold;
 	color: #FFF;
-	font-size: 17px;
+	font-size: 16px;
 	padding-left: 20px;
 	padding-right: 20px;
 	padding-top: 0;
@@ -504,6 +507,9 @@ hr.dotted {
 /* Table */
 .table.v1 tbody tr:first-child td {
 	border-top: none;
+}
+.top-table-row {
+	border-top-color: #00000;
 }
 /* Modal */
 .modal {
@@ -744,6 +750,9 @@ hr.dotted {
 	color: #333;
 	font-size: 20px;
 }
+.price-color {
+	color: #333;
+}
 .pricing-column.popular {
 	margin-top: 0;
 }
@@ -871,12 +880,14 @@ hr.dotted {
 	margin-left: 75px;
 }
 .page-header .price {
-	color: #d64521;
+	color: #2c2c2c;
 	margin-left: 15px;
+	margin-top: 8px;
+	margin-right: 10px;
 	font-size: 24px;
 	line-height: 1.1;
 	text-align: right;
-	font-weight: bold;
+	font-weight: 500;
 }
  @media (max-width: 767px) {
 .page-header .price {
@@ -935,7 +946,7 @@ h4.title {
 }
 .subheadline {
 	font-size: 20px;
-	margin: 20px 0 20px 0;
+	margin: 20px 0 0px 0;
 	padding-bottom: 15px;
 	border-bottom: 1px solid #ddd;
 	color: #869e9e;
@@ -1038,7 +1049,7 @@ h4.title {
 	margin-bottom: 20px;
 }
 .search-form .heading h2 {
-	font-size: 52px;
+	font-size: 46px;
 	margin-top: 0;
 	margin-bottom: 26px;
 	font-weight: bold;
@@ -1052,7 +1063,7 @@ h4.title {
 .search-form .heading h3 {
 	margin-top: 0;
 	margin-bottom: 30px;
-	font-size: 24px;
+	font-size: 22px;
 	font-weight: normal;
 	color: #FFF;
 }
@@ -1434,6 +1445,12 @@ input[type="radio"], input[type="checkbox"] {
 	font-size: 1.25rem;
 	line-height: 1.5;
 }
+.price-sort {
+	font-size: 12px;
+	line-height: 1.5;
+	width: auto;
+}
+.
 /* Select 2 */
 .select2 * {
 	outline: none;
@@ -1767,6 +1784,7 @@ input[type="radio"], input[type="checkbox"] {
 	display: block;
 	font-weight: normal;
 }
+
 .item-listing .item .item-badges {
 	position: absolute;
 	top: 0;
@@ -1779,17 +1797,21 @@ input[type="radio"], input[type="checkbox"] {
 	overflow: hidden;
 	height: 100px;
 }
-.item-listing .item .item-badges .item-badge-left {
+.item-badge-left {
 	background-color: #563d7c;
+	opacity: .75;
+}
+.item-listing .item .item-badges .item-badge-left {
+	font-size: 15px;
 	padding: 5px 10px;
 	color: #FFF;
 	float: left;
-	left: 15px;
-	top: 15px;
+	left: 10px;
+	top: 10px;
 	position: relative;
 	text-align: center;
 	margin: 0;
-	border-radius: 3px;
+	border-radius: 2px;
 }
 .item-listing .item .save-item {
 	display: block;
@@ -1824,8 +1846,8 @@ input[type="radio"], input[type="checkbox"] {
 }
 .item-listing .item .item-badge-right {
 	position: absolute;
-	top: 15px;
-	right: 15px;
+	bottom: 10px;
+	right: 10px;
 	padding: 5px 10px;
 	color: #FFF;
 	background-color: rgba(74, 74, 76, 0.7);
@@ -2026,7 +2048,6 @@ input[type="radio"], input[type="checkbox"] {
 	pointer-events: auto;
 }
 .lazyload .swiper-slide {
-	background-image: url(../img/preloader.svg);
 	background-size: 50px;
 	background-position: center;
 	background-repeat: no-repeat;
@@ -2168,6 +2189,13 @@ input[type="radio"], input[type="checkbox"] {
 }
 .gallery-thumbs .swiper-slide.swiper-slide-active {
 	opacity: 1;
+}
+.agent-name h4 {
+	font-size: 20px;
+}
+.agent-name {
+	margin-top: 0px;
+	margin-bottom: 0px;
 }
 /*	11.	Map
 -------------------------------------------------------------------*/
