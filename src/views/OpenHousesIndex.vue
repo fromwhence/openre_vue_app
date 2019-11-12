@@ -69,11 +69,11 @@
   <div id="content" class="less-top-padding">
     <div class="container">
       <div class="row justify-content-md-center">
-        <div class="col col-lg-12 col-xl-10">
+        <div class="col col-lg-12 col-xl-12">
          <div class="col-md-8 col-lg-9">
           <div class="sorting">
             <div class="row justify-content-between">
-              <div class="col-sm-5 col-md-5 col-lg-4 col-xl-3">
+              <div class="col-sm-5 col-md-5 col-lg-5 col-xl-3">
                 <div class="form-group">
                   <div class="form-group">
                     <select class="form-control form-control-lg ui-select price-sort" placeholder="Sort By">
@@ -112,7 +112,7 @@
                   <div class="col-lg-7">
                     <div class="item-info">
                       <h3 class="item-title"><a href="property_single.html">{{ open_house.property.address }}</a></h3>
-                      <div class="item-location open-house-time">{{ open_house.friendly_start_time }}{{ open_house.friendly_end_time }} 
+                      <div class="item-location open-house-time"><b>Open House:</b>  {{ open_house.friendly_start_time }}{{ open_house.friendly_end_time }} 
                       </div>
                       <div class="item-details-i"> <span class="bedrooms" data-toggle="tooltip" title="bedrooms">{{ open_house.property.bedrooms }} Beds 
                         </span> <span class="bathrooms" data-toggle="tooltip" title="baths">{{ open_house.property.baths }} Baths</span> 
@@ -129,20 +129,19 @@
                         </div>
                       </div>
                       <div class="col-md-6">
-                        <a href="#" class="listing-agent">{{ open_house.realtor.first_name }} {{open_house.realtor.last_name}}</a>
+                        <a href="#" class="listing-agent">{{ open_house.realtor.first_name }} {{open_house.realtor.last_name }}</a>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-md-6">
+                          <div class="listing-agent">Presented by:
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <a href="#" class="brokerage">{{ open_house.realtor.brokerage }}</a>
                         </div>
                       </div>
                     </div>                                  
-                    <div class="row">
-                      <div class="col-md-6">
-                        <div class="brokerage">Presented by:
-                        </div>
-                        </div>
-                        <div class="col-md-6">
-                          <a href="#" class="brokerage">{{ open_house.realtor.brokerage }}</a>
-                        </div>
-                      </div>
-                    </div> 
                     </div>
                   </div>
                 </div>
@@ -169,7 +168,12 @@ export default {
       property: [],
       searchTerm: "",
       searchPropertyType: "",
-      searchDate: ""
+      searchDate: "",
+      sortKey: '',
+              sortSettings: [
+                  { 'price': true }
+                ],
+      desc: true
     };
   },
   created: function() {
@@ -198,6 +202,11 @@ export default {
         .then(response => {
           this.open_houses = response.data;
         });
+     },
+     sortByPrice: function() {
+      this.sortKey = sortKey
+      this.sortSettings[sortKey] = !this.sortSettings[sortKey]
+      this.desc = this.sortSettings[sortKey]
      }
    }
   };

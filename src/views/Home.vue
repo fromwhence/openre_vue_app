@@ -69,56 +69,69 @@
               <div class="row">
                 <div class="col-md-4">
                   <div class="item">
-                    <div class="item-image"><a href="property_single.html"><img src="img/demo/property/1.jpg" class="img-fluid" alt="">
+                    <router-link v-bind:to="'/open_houses/3'">
+                    <div class="item-image"><img src="https://ssl.cdn-redfin.com/photo/68/bigphoto/869/08408869_1.jpg" class="img-fluid" alt="">
                       <div class="item-meta">
-                        <div class="item-price">$420,000 <small>$777 / sq m</small> </div>
+                        <div class="item-badge-right">$550,000 
+                        </div>
                       </div>
                       <div class="item-badges">
-                        <div class="item-badge-left">Sponsored</div>
-                        <div class="item-badge-right">For Sale</div>
+                        <div class="item-badge-left">Sat. 11/16, 12pm-2pm
+                        </div>
                       </div>
-                      </a> <a href="#" class="save-item"><i class="fa fa-star"></i></a> </div>
-                    <div class="item-info">
-                      <h3 class="item-title">3 bed semi-detached house</h3>
-                      <div class="item-location"><i class="fa fa-map-marker"></i> Kirkstone Road, Middlesbrough TS3</div>
-                      <div class="item-details-i"> <span class="bedrooms" data-toggle="tooltip" title="3 Bedrooms">3 <i class="fa fa-bed"></i></span> <span class="bathrooms" data-toggle="tooltip" title="2 Bathrooms">2 <i class="fa fa-bath"></i></span> </div>
                     </div>
+                    <div class="item-info">
+                      <h3 class="item-title">2019 West Rice Street, Unit 3, Chicago, IL, 60626</h3>
+                      <div class="item-details-i"> <span class="bedrooms" data-toggle="tooltip" title="">2 Beds,</span> <span class="bathrooms" data-toggle="tooltip" title=""> 2 Baths</span>
+                      <div class="item-details-i"> <span class="bedrooms" data-toggle="tooltip" title="">1,500 Sq. Ft.</span>
+                      </div>
+                      </div>
+                    </div>
+                  </router-link>
                   </div>
                 </div>
                 <div class="col-md-4">
                   <div class="item">
-                    <div class="item-image"><a href="property_single.html"><img src="img/demo/property/2.jpg" class="img-fluid" alt="">
+                    <router-link v-bind:to="'/open_houses/6'">
+                    <div class="item-image"><img src="https://photos.zillowstatic.com/p_f/ISyvivkegka53k1000000000.jpg" class="img-fluid" alt="">
                       <div class="item-meta">
-                        <div class="item-price">$420,000 <small>$777 / sq m</small> </div>
+                        <div class="item-badge-right">$520,000
+                        </div>
                       </div>
                       <div class="item-badges">
-                        <div class="item-badge-left">Sponsored</div>
-                        <div class="item-badge-right">For Sale</div>
+                        <div class="item-badge-left">Sat. 11/16, 10am-12pmm</div>
                       </div>
-                      </a> <a href="#" class="save-item"><i class="fa fa-star"></i></a> </div>
-                    <div class="item-info">
-                      <h3 class="item-title">3 bed semi-detached house</h3>
-                      <div class="item-location"><i class="fa fa-map-marker"></i> Kirkstone Road, Middlesbrough TS3</div>
-                      <div class="item-details-i"> <span class="bedrooms" data-toggle="tooltip" title="3 Bedrooms">3 <i class="fa fa-bed"></i></span> <span class="bathrooms" data-toggle="tooltip" title="2 Bathrooms">2 <i class="fa fa-bath"></i></span> </div>
                     </div>
+                    <div class="item-info">
+                      <h3 class="item-title">936 North Honore Street, Unit 2, Chicago, IL 60626</h3>
+                      <div class="item-details-i"> <span class="bedrooms" data-toggle="tooltip" title="">2 Beds,</span> <span class="bathrooms" data-toggle="tooltip" title=""> 2.5 Baths</span>
+                      <div class="item-details-i"> <span class="bedrooms" data-toggle="tooltip" title="">1,650 Sq. Ft.</span>
+                      </div>
+                      </div>
+                    </div>
+                  </router-link>
                   </div>
                 </div>
                 <div class="col-md-4">
                   <div class="item">
-                    <div class="item-image"><a href="property_single.html"><img src="img/demo/property/3.jpg" class="img-fluid" alt="">
+                    <router-link v-bind:to="'/open_houses/1'">
+                    <div class="item-image"><img src="https://ssl.cdn-redfin.com/photo/68/bigphoto/341/10534341_0.jpg" class="img-fluid" alt="">
                       <div class="item-meta">
-                        <div class="item-price">$420,000 <small>$777 / sq m</small> </div>
+                        <div class="item-badge-right">$519,000
+                        </div>
                       </div>
                       <div class="item-badges">
-                        <div class="item-badge-left">Sponsored</div>
-                        <div class="item-badge-right">For Sale</div>
+                        <div class="item-badge-left">Sat. 11/16, 3pm-5pm</div>
                       </div>
-                      </a> <a href="#" class="save-item"><i class="fa fa-star"></i></a> </div>
-                    <div class="item-info">
-                      <h3 class="item-title">3 bed semi-detached house</h3>
-                      <div class="item-location"><i class="fa fa-map-marker"></i> Kirkstone Road, Middlesbrough TS3</div>
-                      <div class="item-details-i"> <span class="bedrooms" data-toggle="tooltip" title="3 Bedrooms">3 <i class="fa fa-bed"></i></span> <span class="bathrooms" data-toggle="tooltip" title="2 Bathrooms">2 <i class="fa fa-bath"></i></span> </div>
                     </div>
+                    <div class="item-info">
+                      <h3 class="item-title">1137 North Wood Street, Unit 1H, Chicago, IL 60626</h3>
+                      <div class="item-details-i"> <span class="bedrooms" data-toggle="tooltip" title="">2 Beds,</span> <span class="bathrooms" data-toggle="tooltip" title=""> 2.5 Baths</span>
+                      <div class="item-details-i"> <span class="bedrooms" data-toggle="tooltip" title="">1,800 Sq. Ft.</span>
+                      </div>
+                      </div>
+                    </div>
+                  </router-link>
                   </div>
                 </div>
               </div>

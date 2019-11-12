@@ -45,14 +45,15 @@
         </ul>       
         <ul class="navbar-nav ml-auto">        
           <router-link to="/login"><li class="nav-item dropdown user-account">
-            <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Sign In
+            <a class="nav-link dropdown-toggle" href="/login" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Sign In
             </a>
             <div class="dropdown-menu">
                 <router-link to="/"><a class="logout dropdown-item">Sign Out</a></router-link>
                 <a href="my_password.html" class="dropdown-item">My profile</a>
                 <a href="my_account.html" class="dropdown-item">Account</a>
             </div>
-          </li></router-link>
+          </li>
+          </router-link>
           <router-link to="/signup"><li class="nav-item"><a class="nav-link nav-btn" href="my_listing_add.html"><span><i class="fa fa-plus" aria-hidden="true"></i> Sign Up</span></a></li></router-link>
         </ul>
         

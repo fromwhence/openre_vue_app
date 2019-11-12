@@ -752,7 +752,9 @@ hr.dotted {
 }
 .price-color {
 	color: #333;
+	background-color: ;
 }
+
 .pricing-column.popular {
 	margin-top: 0;
 }
@@ -1446,11 +1448,10 @@ input[type="radio"], input[type="checkbox"] {
 	line-height: 1.5;
 }
 .price-sort {
-	font-size: 12px;
+	font-size: 14px;
 	line-height: 1.5;
 	width: auto;
 }
-.
 /* Select 2 */
 .select2 * {
 	outline: none;
@@ -1853,6 +1854,23 @@ input[type="radio"], input[type="checkbox"] {
 	background-color: rgba(74, 74, 76, 0.7);
 	border-radius: 3px;
 }
+.item-price-btm-left {
+	background-color: #563d7c;
+	opacity: .75;
+}
+.item-price-btm-left {
+	font-size: 15px;
+	padding: 5px 10px;
+	background-color: rgba(74, 74, 76, 0.9);
+	float: left;
+	left: 10px;
+	top: 10px;
+	position: relative;
+	text-align: center;
+	margin-bottom: 10px;
+	border-radius: 2px;
+}
+
 .item-listing .item .item-title {
 	font-size: 15px;
 	line-height: 22px;

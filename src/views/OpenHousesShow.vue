@@ -19,7 +19,7 @@
   <div id="content" class="item-single">
     <div class="container">
       <div class="row justify-content-md-center">
-            <div class="col col-md-12 col-lg-12 col-xl-10">
+        <div class="col col-md-12 col-lg-12 col-xl-10">
           <div class="row row justify-content-md-center has-sidebar">
             <div class="col-md-7 col-lg-8">
               <div>
