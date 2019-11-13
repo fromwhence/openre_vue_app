@@ -6,14 +6,20 @@
         <div class="search-form">
           <div class="card">
             <div class="row">
+              <!-- datepicker search -->
+              <div class="col-lg-3 search-date-spacing">
+                <div class="form-group">
+                  <input id="datepicker" type="date" class="form-control form-control-lg" v-model="searchDate" placeholder="">
+                </div>
+              </div>
               <!-- address search -->
-              <div class="col-lg-3 search-left-input-padding">
+              <div class="col-lg-3 zip-code-search-input">
                 <div class="form-group">
                   <input type="text" class="zip-code-search form-control form-control-lg zip-code-search" v-model="searchTerm" placeholder="Zip Code">
                 </div>
               </div>
               <!-- property type pulldown -->
-             <div class="col-lg-3 search-input-padding">
+             <div class="col-lg-3 search-input-index">
                 <div class="form-group">
                   <select class="form-control form-control-lg ui-select" v-model="searchPropertyType" placeholder="Property Type">
                     <option value=""> Property Type </option>
@@ -24,12 +30,7 @@
                   </select>
                 </div>
               </div>
-              <!-- datepicker search -->
-              <div class="col-lg-3 search-input-padding">
-                <div class="form-group">
-                  <input id="datepicker" type="date" class="form-control form-control-lg" v-model="searchDate" placeholder="">
-                </div>
-              </div>
+
               <!-- search all button -->
               <div class="col-sm-1.5 search-button">
                 <div class="form-group">
@@ -55,7 +56,7 @@
           <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
               <li class="breadcrumb-item"><a href="/">Home</a></li>
-              <li class="breadcrumb-item"><a href="open_houses">Open Houses</a></li>
+              <li class="breadcrumb-item"><a href="/open_houses">Open Houses</a></li>
               <li class="breadcrumb-item active" aria-current="page">Results</li>
             </ol>
           </nav>

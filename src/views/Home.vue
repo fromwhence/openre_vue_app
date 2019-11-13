@@ -14,8 +14,8 @@
             <form v-on:submit.prevent="searchAll()"> 
                 <div class="card">
                   <div class="row">
-                <div class="col-lg-3 search-input-padding">
-                  <div class="form-group">
+                <div class="col-lg-3">
+                  <div class="form-group search-date-padding">
                     <input id="datepicker" type="date" class="form-control form-control-lg" v-model="searchDate" placeholder="">
                   </div>
                 </div>

@@ -1222,7 +1222,7 @@ h4.title {
 	border-color: transparent;
 }
 .search-left-input-padding {
-	padding-left: 14px;
+	padding-left: 5px;
 	padding-right: 5px;
 }
 .search-input-padding {
@@ -2682,6 +2682,15 @@ input[type="radio"], input[type="checkbox"] {
 	margin-top: -5px;
 	padding-top: 0px;
 }
-
+.search-date-spacing {
+	margin-left: 5px;
+}
+.zip-code-search-input {
+	margin-left: -10px;
+}
+.search-input-index {
+	margin-left: -10px;
+	margin-right: 5px;
+}
 
 /*# sourceMappingURL=style.css.map */
