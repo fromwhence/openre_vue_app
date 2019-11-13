@@ -5,10 +5,19 @@
         <div class="col col-md-12 col-lg-12 col-xl-10">         
           <div class="page-header bordered mb0">
             <div class="row">
-              <div class="col-md-8"> <a href="#" class="btn-return" title="Back"><i class="fa fa-angle-left"></i></a>
-                <h1>{{ open_house.property.address }}<small>Open House: {{ open_house.friendly_start_time }}{{ open_house.friendly_end_time }}</small></h1>
+              <div class="col-md-8">
+                <router-link v-bind:to="'/open_houses/'">
+                  <a href="#" class="btn-return" title="Back">
+                    <i class="fa fa-angle-left">                   
+                    </i>
+                  </a>
+                </router-link>
+                <div>
+                  <h1>{{ open_house.property.address }}</h1>
+                  <h4 class="open-house-time-header">Open House: {{ open_house.friendly_start_time }}{{ open_house.friendly_end_time }}</h4>
+                </div>
               </div>
-            <div class="col-md-4">
+              <div class="col-md-4">
               <div class="price price-color">${{ open_house.property.friendly_price }}</div>
             </div>
           </div>
@@ -98,17 +107,29 @@
                   <div class="card shadow">
                     <h5 class="subheadline mt-0  mb-0">Listing Agent</h5>
                     <div class="media">
-                      <div class="media-left"> <a href="agent.html"> <img class="media-object rounded-circle" src="https://d2787ndpv5cwhz.cloudfront.net/6d1d21a044b00cd6e643f37bf0003b4b01a4504c/300x300.jpg" width="80" height="80" alt=""> </a> </div>
+                      <div class="media-left"> <a href="agent.html"> <img class="media-object rounded-circle" v-bind:src="open_house.realtor.photo_url" width="80" height="80" alt=""> </a> </div>
+                      <router-link v-bind:to="'/realtors/' + open_house.realtor.id">
                       <div class="media-body agent-name">
                         <h4 class="media-heading">
                           <a href="agent.html">{{ open_house.realtor.first_name }} {{open_house.realtor.last_name}}</a>
                         </h4>
-                        <p>
-                          <a href="tel:01502392905"><i class="fa fa-phone" aria-hidden="true"></i> Call: 01502 392905</a></p>
-                        <p><a href="agent.html" class="btn btn-sm btn-light">View Profile</a></p>
+                      </div>
+                    </router-link>
+                    </div>
+                    <div class="realtor-contact">
+                        <tr>
+                          <td>Phone:</td>
+                          <td> {{ open_house.realtor.phone }}</td>
+                        </tr>
+                        <p>{{ open_house.realtor.email }}
+                        </p>
+                        </tr>
                       </div>
                     </div>
-                    <a href="#" class="btn btn-lg btn-primary btn-block" data-toggle="modal" data-target="#leadform">Request Details</a> </div>
+                    <router-link v-bind:to="'/realtors/' + open_house.realtor.id">
+                      <button type="submit" class="btn btn-lg btn-primary btn-block">View Profile
+                      </button>
+                    </router-link>
                 </div>
               </div>
             </div>
@@ -152,6 +173,7 @@ export default {
           }
         },
         realtor: {
+          id: "",
           first_name: "",
           last_name: "",
           brokerage: "",

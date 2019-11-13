@@ -15,7 +15,7 @@
               <!-- property type pulldown -->
              <div class="col-lg-3 search-input-padding">
                 <div class="form-group">
-                  <select class="form-control form-control-lg ui-select" placeholder="Property Type">
+                  <select class="form-control form-control-lg ui-select" v-model="searchPropertyType" placeholder="Property Type">
                     <option value=""> Property Type </option>
                     <option value="0">Single-Family</option>
                     <option value="1">Condo</option>
@@ -50,12 +50,12 @@
     <!-- end of open houses nav bar -->
     <!-- breadcrumbs and page header -->
     <div class="container">
-      <div class="row justify-content-md-center">
+      <div class="row justify-content-md-center" >
         <div class="col col-lg-12 col-xl-10">
           <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
               <li class="breadcrumb-item"><a href="/">Home</a></li>
-              <li class="breadcrumb-item"><a href="#">Open Houses</a></li>
+              <li class="breadcrumb-item"><a href="open_houses">Open Houses</a></li>
               <li class="breadcrumb-item active" aria-current="page">Results</li>
             </ol>
           </nav>
@@ -67,14 +67,14 @@
     </div>
     <!-- open houses list view -->
   <div id="content" class="less-top-padding">
-    <div class="container">
+    <div class="container results-extra-left-padding">
       <div class="row justify-content-md-center">
         <div class="col col-lg-12 col-xl-12">
          <div class="col-md-8 col-lg-9">
           <div class="sorting">
             <div class="row justify-content-between">
               <div class="col-sm-5 col-md-5 col-lg-5 col-xl-3">
-                <div class="form-group">
+               <!--  <div class="form-group">
                   <div class="form-group">
                     <select class="form-control form-control-lg ui-select price-sort" placeholder="Sort By">
                       <option value=""> Sort By </option>
@@ -82,13 +82,14 @@
                       <option value="1">Lowest Price</option>
                     </select>
                   </div>
-                </div>
+                </div> -->
               </div>
               <!-- <div class="col-sm-6 col-md-5 col-lg-4 col-xl-3">
                 <div class="btn-group float-right" role="group"> <a href="property_grid.html" class="btn btn-light"><i class="fa fa-th"></i></a> <a href="property_listing.html" class="btn btn-light active"><i class="fa fa-bars"></i></a> </div>
               </div> -->
              </div>                
             </div>
+
           <div class="clearfix"></div>
             <div class="item-listing list">
               <div v-for="open_house in open_houses">
@@ -109,10 +110,10 @@
                         </router-link>
                       </div>
 
-                  <div class="col-lg-7">
-                    <div class="item-info">
-                      <h3 class="item-title"><a href="property_single.html">{{ open_house.property.address }}</a></h3>
-                      <div class="item-location open-house-time"><b>Open House:</b>  {{ open_house.friendly_start_time }}{{ open_house.friendly_end_time }} 
+                  <div class="col-lg-7 result-bottom-border">
+                    <div class="item-info ">
+                      <h3 class="item-title address">{{ open_house.property.address }}</h3>
+                      <div class="item-location open-house-time"><b>Open House: </b> {{ open_house.friendly_start_time }}{{ open_house.friendly_end_time }}
                       </div>
                       <div class="item-details-i"> <span class="bedrooms" data-toggle="tooltip" title="bedrooms">{{ open_house.property.bedrooms }} Beds 
                         </span> <span class="bathrooms" data-toggle="tooltip" title="baths">{{ open_house.property.baths }} Baths</span> 
@@ -123,22 +124,24 @@
                           </ul>
                         </div>
                       </div>
-                      <div class="row">
+                      <div class="row agent-spacing">
                         <div class="col-md-6">
-                          <div class="listing-agent">Listing agent:
+                          <div class="listing-agent"><b>Listing agent:</b>
                         </div>
                       </div>
                       <div class="col-md-6">
-                        <a href="#" class="listing-agent">{{ open_house.realtor.first_name }} {{open_house.realtor.last_name }}</a>
+                        <router-link v-bind:to="'/realtors/' + open_house.realtor.id">
+                          <a class="listing-agent">{{ open_house.realtor.first_name }} {{open_house.realtor.last_name }}</a>
+                        </router-link>
                         </div>
                       </div>
                       <div class="row">
                         <div class="col-md-6">
-                          <div class="listing-agent">Presented by:
+                          <div class="listing-agent"><b>Presented by:</b>
                         </div>
                       </div>
                       <div class="col-md-6">
-                        <a href="#" class="brokerage">{{ open_house.realtor.brokerage }}</a>
+                        <div class="brokerage">{{ open_house.realtor.brokerage }}
                         </div>
                       </div>
                     </div>                                  

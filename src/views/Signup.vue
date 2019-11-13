@@ -40,6 +40,7 @@
                     <label for="password">Password Confirmation:</label>
                     <input type="password" id="password" class="form-control form-control-lg" placeholder="" v-model="passwordConfirmation">
                   </div>
+                  
                   <div v-if="userType == 'Realtor'">
                     <div class="form-group">
                       <label for="brokerage">Brokerage:</label>

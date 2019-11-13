@@ -78,6 +78,11 @@ h1.block, h2.block, h3.block, h4.block, h5.block, h6.block {
 	padding-bottom: 10px;
 }
 
+/* ADDED by Matt */
+
+
+
+
 /* ADDED BY ME - HTML DATE INPUT
 
 
@@ -104,7 +109,7 @@ br {
 	clear: both;
 }
 code {
-	color: #c64643;
+	color: #2c2c2c;
 	background-color: #f0f0f0;
 }
 code:hover {
@@ -196,7 +201,7 @@ ul.checked_list.feature-list, ol.checked_list.feature-list {
 }
 }
 address {
-	padding-top: 17px;
+	padding-top: 10px;
 	margin-bottom: 0px;
 }
 address a {
@@ -281,6 +286,10 @@ hr.dotted {
 .container-1000 {
     max-width: 1000px;
 }}
+
+/*.content-align-right {
+	padding-left: 100px;
+}*/
 /*	3.	Menu
 -------------------------------------------------------------------*/
 #menu {
@@ -317,7 +326,7 @@ hr.dotted {
 	color: #FFF;
 	font-size: 16px;
 	padding-left: 20px;
-	padding-right: 20px;
+	padding-right: 35px;
 	padding-top: 0;
 	padding-bottom: 0;
 	margin-top: 15px;
@@ -351,7 +360,7 @@ hr.dotted {
 	color: #ffce40;
 	font-weight: bold;
 	border: 1px solid #ffce40;
-	padding: 10px 20px;
+	padding: 10px 25px;
 	border-radius: 3px;
 }
  @media (max-width: 991px) {
@@ -511,6 +520,11 @@ hr.dotted {
 .top-table-row {
 	border-top-color: #00000;
 }
+.realtor-contact {
+	left: 5px;
+	margin-top: 25px;
+	margin-bottom: 20px;
+}
 /* Modal */
 .modal {
 	z-index: 1053;
@@ -574,6 +588,9 @@ hr.dotted {
 }
 
 /* List Group */
+
+
+
 .list-group.no-border .list-group-item {
 	border: none;
 	margin-bottom: 1px;
@@ -647,6 +664,9 @@ hr.dotted {
 }
 .breadcrumb-item.active {
 	color: rgba(134, 158, 158, 0.7);
+}
+.breadcrumb {
+	margin-bottom: 0px;
 }
 /* Pagination */
 .pagination {
@@ -784,7 +804,7 @@ hr.dotted {
 }
 /* Feature Box */
 .feature-box {
-	padding-top: 60px;
+	padding-top: 35px;
 	padding-bottom: 60px;
 	box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
 }
@@ -858,7 +878,7 @@ hr.dotted {
 -------------------------------------------------------------------*/
 .page-header {
 	margin-top: 20px;
-	margin-bottom: 20px;
+	margin-bottom: 10px;
 	padding-bottom: 0;
 	border-bottom: none;
 }
@@ -949,14 +969,14 @@ h4.title {
 .subheadline {
 	font-size: 20px;
 	margin: 20px 0 0px 0;
-	padding-bottom: 15px;
+	padding-bottom: 5px;
 	border-bottom: 1px solid #ddd;
 	color: #869e9e;
 	font-weight: 500;
 }
 .main-title {
 	font-size: 28px;
-	margin-bottom: 15px;
+/*	margin-bottom: 5px;*/
 	line-height: 34px;
 	color: #333;
 }
@@ -998,13 +1018,19 @@ h4.title {
 	font-size: 18px;
 }
 }
+.header-align-left {
+	padding-left: 0px;
+}
+.header-align-left h1 {
+	margin-top: 0px;
+}
 /*	4.	Search Form
 -------------------------------------------------------------------*/
 .home-search {
 	margin-top: -15px;
 }
 .search-form.main {
-	min-height: 620px;
+	min-height: 585px;
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -1022,7 +1048,7 @@ h4.title {
 	top: 0;
 	bottom: 0;
 	background: url(../img/mask_grey.png) no-repeat center center;
-  opacity: 0.65;
+  	opacity: 0.65;
 	background-size: cover;
 	z-index: 1;
 }
@@ -1219,6 +1245,9 @@ h4.title {
 .reset-button button {
 	padding-left: 30px;
 	padding-right: 30px;
+}
+.search-box-heading h2 {
+	padding-bottom: 5px;
 }
 
 
@@ -1872,18 +1901,22 @@ input[type="radio"], input[type="checkbox"] {
 }
 
 .item-listing .item .item-title {
+	color: #676172;
 	font-size: 15px;
 	line-height: 22px;
 	font-weight: 600;
 	margin-top: 0;
 }
 .item-listing .item .item-location, .item-listing .item .item-author {
-	color: #999;
-	margin-bottom: 10px;
-	font-size: 13px;
+	color: #676172;
+	margin-bottom: 0px;
+	font-size: 15px;
 	white-space: nowrap;
 	overflow: hidden;
 	text-overflow: ellipsis;
+}
+.results-extra-left-padding {
+	padding-left: 0px;
 }
 .item-listing .item .item-comments-count {
 	float: right;
@@ -2038,6 +2071,12 @@ input[type="radio"], input[type="checkbox"] {
 #streetview iframe, #map iframe {
 	width: 100%;
 }
+.agent-spacing {
+	font-size: 15px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+}
+
 /*	10.	Gallery
 -------------------------------------------------------------------*/
 /* Swiper Modification */
@@ -2469,6 +2508,8 @@ input[type="radio"], input[type="checkbox"] {
 /*	14.	Footer
 -------------------------------------------------------------------*/
 #footer {
+	margin-top: 50px;
+	margin-left: 75px;
 	padding-top: 50px;
 	padding-bottom: 50px;
 	/*background-color: #e0e0e6;*/
@@ -2544,5 +2585,103 @@ input[type="radio"], input[type="checkbox"] {
 	font-size: 60px;
 	text-shadow: 1px 2px 0px rgba(0, 0, 0, 0.2);
 }
+.brokerage {
+	margin-bottom: 10px;
+	font-size: 15px;
+	color: #584b8d;
+}
+.listing-agent {
+	font-size: 15px;
+}
+.item-details {
+	font-size: 15px;
+}
+.item-details-i span {
+	margin-top: 0px;
+	font-size: 15px;
+}
+
+.open-house-time b {
+	color: #626262;
+	font-size: 16px;
+	margin-top: 10px;
+	margin-bottom: 0px;
+}
+.open-house-time-realtor {
+	margin-top: 5px;
+
+}
+.open-house-time-header {
+	margin-top: 27px;
+}
+.realtor-results {
+	color: #2c2c2c;
+	font-size: 24px;
+
+}
+.realtor-name-bio {
+	padding-bottom: 12px;
+}
+.realtor-info-spacing {
+	padding-top: 10px;
+	font-size: 15px;
+}
+.realtor-info-spacing-bottom {
+	padding-top: 3px;
+	margin-bottom: 15px;
+	font-size: 15px;
+}
+.realtor-heading h1 {
+	font-size: 24px;
+}
+.item-details-i-realtor {
+	margin-bottom: 3px;
+	font-size: 15px;
+}
+.realtor-page-address {
+	font-weight: normal;
+	font-size: 16px;
+	font-weight: 500;
+}
+.realtor-page-wider {
+	padding-right: 0px;
+	padding-left: 0px;
+	margin-right: 0px;
+	margin-left: 0px;
+}
+/*.extra-margin-on-left {
+	margin-left: 100px;
+}*/
+.right-column-move-up {
+	padding-left: 35px;
+}
+.login-logout {
+	margin-right: 0px;
+}
+.sign-up {
+	margin-left: -20px;
+}
+.header-margin-top {
+	margin-top: 85px;
+}
+.result-bottom-border {
+	border-bottom: 1px solid #adadad;
+	padding-top: 10px;
+	padding-left: 20px;
+	padding-right: 40px;
+}
+.home-search-results-layout {
+	padding-left: 95px;
+	margin-right: 0px;
+}
+.agent-spacing-home {
+	margin-top: -10px;
+	padding-top: 0px;
+}
+.open-house-time-home {
+	margin-top: -5px;
+	padding-top: 0px;
+}
+
 
 /*# sourceMappingURL=style.css.map */

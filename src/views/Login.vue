@@ -16,11 +16,11 @@
                   </ul>
                   <div class="form-group">
                     <label for="email">Email</label>
-                    <input type="email" id="email" class="form-control form-control-lg" placeholder="Email" v-model="email">
+                    <input type="email" id="email" class="form-control form-control-lg" placeholder="" v-model="email">
                   </div>
                   <div class="form-group">
                     <label for="password">Password</label>
-                    <input type="password" id="password" class="form-control form-control-lg" placeholder="Password" v-model="password">
+                    <input type="password" id="password" class="form-control form-control-lg" placeholder="" v-model="password">
                   </div>
                   <p class="text-lg-right"><a href="forgot-password.html">Forgot Password</a></p>
                   <div class="checkbox">
@@ -35,26 +35,6 @@
         </div>
       </div>
     </div>
-    <!-- original code -->
-<!--     <div class="container">
-      <form v-on:submit.prevent="submit()">
-        <h1>Login</h1>
-        <ul>
-          <li class="text-danger" v-for="error in errors">{{ error }}</li>
-        </ul>
-        <div class="form-group">
-          <label>Email:</label>
-          <input type="email" class="form-control" v-model="email">
-        </div>
-        <div class="form-group">
-          <label>Password:</label>
-          <input type="password" class="form-control" v-model="password">
-        </div>
-        <input type="submit" class="btn btn-primary" value="Submit">
-      </form>
-    </div> -->
-    <!-- end of original code -->
-
   </div>
 </template>
 
@@ -78,17 +58,19 @@ export default {
       axios
         .post("/api/sessions", params)
         .then(response => {
-          axios.defaults.headers.common["Authorization"] =
-            "Bearer " + response.data.jwt;
+          axios.defaults.headers.common["Authorization"] = "Bearer " + response.data.jwt;
+          this.$parent.currentUserName = response.data.user_name;
+
           localStorage.setItem("jwt", response.data.jwt);
+          localStorage.setItem("userName", response.data.user_name);
+
           this.$router.push("/");
         })
         .catch(error => {
           this.errors = ["Invalid email or password."];
           this.email = "";
           this.password = "";
-        });
-        
+        });       
       }
   }
 };

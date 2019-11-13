@@ -22,17 +22,6 @@
             </a>
           </li>
         </router-link>
-
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Buyers
-          </a>
-          <div class="dropdown-menu">
-              <a href="#" class="dropdown-item"> Profile </a>
-              <a href="#" class="dropdown-item"> Resources </a>
-          </div>
-        </li>
-
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             Agents
@@ -43,18 +32,39 @@
           </div>
         </li>         
         </ul>       
-        <ul class="navbar-nav ml-auto">        
-          <router-link to="/login"><li class="nav-item dropdown user-account">
-            <a class="nav-link dropdown-toggle" href="/login" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Sign In
-            </a>
-            <div class="dropdown-menu">
-                <router-link to="/"><a class="logout dropdown-item">Sign Out</a></router-link>
-                <a href="my_password.html" class="dropdown-item">My profile</a>
-                <a href="my_account.html" class="dropdown-item">Account</a>
-            </div>
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item" v-if="currentUserName">
+            <span class="nav-link">
+              Hi, {{ currentUserName }}
+            </span>
           </li>
-          </router-link>
-          <router-link to="/signup"><li class="nav-item"><a class="nav-link nav-btn" href="my_listing_add.html"><span><i class="fa fa-plus" aria-hidden="true"></i> Sign Up</span></a></li></router-link>
+          
+          
+
+
+          <li class="nav-item" v-if="!currentUserName">
+            <router-link class="nav-link nav-btn login-logout" to="/login">
+              <span>
+                <i  aria-hidden="true"></i> Log In
+              </span>
+            </router-link>
+          </li>
+
+          <li class="nav-item" v-if="currentUserName">
+            <router-link class="nav-link nav-btn login-logout" to="/logout">
+              <span>
+                <i class="" aria-hidden="true"></i> Log out
+              </span>
+            </router-link>
+          </li>
+
+          <li class="nav-item" v-if="!currentUserName">
+            <router-link class="nav-link nav-btn sign-up" to="/signup">
+              <span>
+                <i class="fa fa-plus" aria-hidden="true"></i> Sign Up
+              </span>
+            </router-link>
+          </li>
         </ul>
         
       </div>
@@ -132,25 +142,16 @@ var axios = require('axios');
 export default {
   data: function() {
     return {
-      open_houses: [],
-      searchTerm: ""
+      currentUserName: ""
     };
   },
   created: function() {
-    axios
-      .get("http://localhost:3000/api/open_houses")
-      .then(response => {
-        this.open_houses = response.data;
-      });
+    var userName = localStorage.getItem("userName");
+    if (userName) {
+      this.currentUserName = userName;
+    }
   },
   methods: {
-     search: function() {
-       axios
-         .get("http://localhost:3000/api/open_houses?search=" + this.searchTerm)
-         .then(response => {
-           this.open_houses = response.data;
-         });
-     }
    }
   };
 </script>
