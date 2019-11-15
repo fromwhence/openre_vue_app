@@ -39,7 +39,7 @@
                       </div>
                       <div class="col-sm-5">
                         <div class="form-group">
-                          <button v-on:click="searchAll()" type="submit" class="btn btn-lg btn-primary btn-block">Search</button>
+                          <button v-on:click="searchAll()" @click='toggle = !toggle' type="submit" class="btn btn-lg btn-primary btn-block">Search</button>
                         </div>
                       </div>
                     </div>
@@ -51,14 +51,14 @@
         </div>
       </div>
     </div>
-  </div>
+  </diwoodv>
 
   <!-- End of Central Search Bar -->
   <!-- Start of Featured Opened Houses -->
 
   <div class="feature-box centered gray">
     <div>
-      <div class="container">
+      <div class="container" v-show='toggle'>
         <div class="row justify-content-md-center">
           <div class="col col-lg-12 col-xl-10">
             <div class="item-listing grid">
@@ -141,15 +141,17 @@
 
   <!-- End of Featured Open Houses -->
 
- <div class="home-search-results">
+ <div class="home-search-results" v-show='!toggle'>
   <div class="container">
     <div class="row justify-content-md-center" >
-      <div class="col col-lg-12 col-xl-10">
-      <div class="page-header header-margin-top">
-        <h1>Upcoming open houses matching your search</h1>
+      <div class="col col-lg-10 col-xl-10 reset-btn-align-right">
+        <div class="page-header open-houses-header-home">
+          <h1>Upcoming open houses matching your search
+            <button v-on:click="resetSearch()" @click='toggle = !toggle' type="submit" class="btn btn-lg btn-primary btn-block reset-button-home">Reset</button>         
+          </h1>
+        </div>
       </div>
     </div>
-   </div>
   </div>
   <div id="content" class="less-top-padding">
     <div class="container results-extra-left-padding">
@@ -260,7 +262,8 @@ export default {
       searchTerm: "",
       searchPropertyType: "",
       searchDate: "",
-      searchResults: ""
+      searchResults: "",
+      toggle: true
     };
   },
   created: function() {
@@ -283,6 +286,7 @@ methods: {
       this.searchDate = "";
       this.searchTime = "";
       this.searchTerm = "";
+      this.searchPropertyType = "";
 
       axios
         .get("http://localhost:3000/api/open_houses")

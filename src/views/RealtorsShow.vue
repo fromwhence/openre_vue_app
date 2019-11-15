@@ -39,7 +39,7 @@
                 </div>
               </div>
               <div class="col-md-7 col-lg-9 col-xl-8 right-column-move-up">
-                <div class="page-header header-underline realtor-heading">
+                <div class="page-header realtor-heading">
                   <h1>Upcoming open houses hosted by {{ realtor.first_name }}</h1>
                 </div>
                   <div class="sorting">

@@ -200,17 +200,13 @@ export default {
       this.searchDate = "";
       this.searchTime = "";
       this.searchTerm = "";
+      this.searchPropertyType = "";
 
       axios
         .get("http://localhost:3000/api/open_houses")
         .then(response => {
           this.open_houses = response.data;
         });
-     },
-     sortByPrice: function() {
-      this.sortKey = sortKey
-      this.sortSettings[sortKey] = !this.sortSettings[sortKey]
-      this.desc = this.sortSettings[sortKey]
      }
    }
   };

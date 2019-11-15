@@ -521,9 +521,10 @@ hr.dotted {
 	border-top-color: #00000;
 }
 .realtor-contact {
+	color: #584b8d;
 	left: 5px;
 	margin-top: 25px;
-	margin-bottom: 20px;
+	margin-bottom: 15px;
 }
 /* Modal */
 .modal {
@@ -2632,6 +2633,7 @@ input[type="radio"], input[type="checkbox"] {
 	font-size: 15px;
 }
 .realtor-heading h1 {
+	margin-top: -20px;
 	font-size: 24px;
 }
 .item-details-i-realtor {
@@ -2652,9 +2654,6 @@ input[type="radio"], input[type="checkbox"] {
 /*.extra-margin-on-left {
 	margin-left: 100px;
 }*/
-.right-column-move-up {
-	padding-left: 35px;
-}
 .login-logout {
 	margin-right: 0px;
 }
@@ -2662,7 +2661,7 @@ input[type="radio"], input[type="checkbox"] {
 	margin-left: -20px;
 }
 .header-margin-top {
-	margin-top: 85px;
+	margin-top: 70px;
 }
 .result-bottom-border {
 	border-bottom: 1px solid #adadad;
@@ -2691,6 +2690,47 @@ input[type="radio"], input[type="checkbox"] {
 .search-input-index {
 	margin-left: -10px;
 	margin-right: 5px;
+}
+.reset-button-home {
+	width: 175px;
+	float: right;
+	background-color: #fff;
+	margin-left: 0px
+}
+.reset-btn-align-right {
+	padding-right: 0px;
+}
+.open-houses-header-home {
+	margin-top: 15px;
+	margin-bottom: 0px;
+}
+.open-houses-header-home button {
+	margin-top: -5px;
+	margin-bottom: 0px;
+}
+.realtor-buyer-radios {
+	font-size: 16px;
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+.right-column-move-up {
+	padding-left: 35px;
+	margin-top: 0px;
+}
+.detailed-listing {
+	width: 100%;
+	font-size: 15px;
+	padding-top: 15px;
+	padding-left: 12px;
+	padding-bottom: 0px;
+	vertical-align: top;
+    border-top: 1px solid #dee2e6;
+}
+.square-feet-bottom-bdr {
+	border-bottom: 1px solid #dee2e6;
+}
+.detailed-listing-bttm-padding {
+	padding-bottom: 10px;
 }
 
 /*# sourceMappingURL=style.css.map */

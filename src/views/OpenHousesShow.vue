@@ -7,7 +7,7 @@
             <div class="row">
               <div class="col-md-8">
                 <router-link v-bind:to="'/open_houses/'">
-                  <a href="#" class="btn-return" title="Back">
+                  <a class="btn-return" title="Back">
                     <i class="fa fa-angle-left">                   
                     </i>
                   </a>
@@ -68,7 +68,7 @@
               <div id="sidebar" class="sidebar-right">
                 <div class="sidebar_inner">
                   <div id="feature-list" role="tablist">
-                  <div class="card">
+                  <div class="card detailed-listing-bttm-padding">
                     <div class="card-header" role="tab" id="headingOne">
                       <h4 class="panel-title"> <a role="button" data-toggle="collapse" href="#specification" aria-expanded="true" aria-controls="specification"> Property Info <i class="fa fa-caret-down float-right"></i> </a> </h4>
                     </div>
@@ -93,12 +93,11 @@
                           </tr>
                           <tr>
                             <td>Sq. Ft.</td>
-                            <td>{{ open_house.property.friendly_square_footage }}</td>
+                            <td class="square-feet-bottom-bdr">{{ open_house.property.friendly_square_footage }}</td>
                           </tr>
-                          <tr>
-                            <td>Year Built</td>
-                            <td>{{ open_house.property.year_built }}</td>
-                          </tr>
+                          <div class="detailed-listing">
+                            <a v-bind:href="open_house.property.listing_url" target="_blank">Detailed Listing</a>                  
+                          </div>
                         </table>
                       </div>
                     </div>
@@ -107,11 +106,11 @@
                   <div class="card shadow">
                     <h5 class="subheadline mt-0  mb-0">Listing Agent</h5>
                     <div class="media">
-                      <div class="media-left"> <a href="agent.html"> <img class="media-object rounded-circle" v-bind:src="open_house.realtor.photo_url" width="80" height="80" alt=""> </a> </div>
+                      <div class="media-left"><img class="media-object rounded-circle" v-bind:src="open_house.realtor.photo_url" width="80" height="80" alt=""></div>
                       <router-link v-bind:to="'/realtors/' + open_house.realtor.id">
                       <div class="media-body agent-name">
                         <h4 class="media-heading">
-                          <a href="agent.html">{{ open_house.realtor.first_name }} {{open_house.realtor.last_name}}</a>
+                          <a>{{ open_house.realtor.first_name }} {{open_house.realtor.last_name}}</a>
                         </h4>
                       </div>
                     </router-link>

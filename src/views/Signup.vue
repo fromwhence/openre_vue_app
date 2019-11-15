@@ -7,7 +7,7 @@
           <div class="col col-md-6  col-lg-6 col-xl-4">
             <ul class="nav nav-tabs tab-lg" role="tablist">
               <li role="presentation" class="nav-item"><a class="nav-link" href="/login">Sign In</a></li>
-              <li role="presentation" class="nav-item"><a class="nav-link active" href="/signin">Sign Up</a></li>
+              <li role="presentation" class="nav-item"><a class="nav-link active">Sign Up</a></li>
             </ul>
             <div class="tab-content">
               <div role="tabpanel" class="tab-pane active" id="login">
@@ -16,7 +16,7 @@
                     <li class="text-danger" v-for="error in errors">{{ error }}</li>
                   </ul>
                   <div class="form-group realtor-buyer-radios">
-                    User Type:
+                    User Type: 
                     <input type="radio" name="Realtor" value="Realtor" v-model="userType"> Realtor
                     <input type="radio" name="Buyer" value="Buyer" v-model="userType"> Buyer
                   </div>
